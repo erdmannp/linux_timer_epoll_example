@@ -35,9 +35,8 @@
 #define MAX_EVENTS 50
 #define READ_BYTES 64
 
-static int i = 0;
-static int msg_id;
-static int epoll_fd;
+int msg_id;
+int epoll_fd;
 mqd_t mq;
 const char* queue_name = "/ExampleMQ";
 
@@ -102,7 +101,7 @@ void _init_timer() {
 	}
 }
 
-static void _init_msg_queue() {
+void _init_msg_queue() {
 	struct mq_attr attr;
 	struct sigevent sev;
 
