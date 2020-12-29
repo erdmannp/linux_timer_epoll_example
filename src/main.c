@@ -5,7 +5,7 @@
  *
  *    Description:  Simple Example for Linux Timer and Epoll
  *                  The idea is to create a random number of messages via a Linux timer.
- *                  Then this should be printed with epoll.
+ *                  Then this should be printed eventbased with epoll.
  *
  *        Version:  1.0
  *        Created:  29.12.2020 16:15:46
