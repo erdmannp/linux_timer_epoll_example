@@ -42,7 +42,7 @@ const char* queue_name = "/ExampleMQ";
 
 void timer_signal(union sigval val) {
 	int ret;
-	int random = rand() % MAX_EVENTS;
+	int random = rand() % (MAX_EVENTS * 2);
 
 	char buf[READ_BYTES];
 	char buf_tmp[READ_BYTES];
@@ -91,7 +91,7 @@ void _init_timer() {
 		struct itimerspec in, out;
 		in.it_value.tv_sec = 0;
 		in.it_value.tv_nsec = 1;
-		in.it_interval.tv_sec = 0;
+		in.it_interval.tv_sec = 1;
 		in.it_interval.tv_nsec = 10000000; // 10 ms
 
 		ret = timer_settime(_timer, 0, &in, &out);
